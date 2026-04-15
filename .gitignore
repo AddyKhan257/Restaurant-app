@@ -1,0 +1,52 @@
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+venv/
+.venv/
+*.sqlite3
+
+# ── Django ───────────────────────────────────────────────────
+backend/staticfiles/
+backend/media/
+backend/logs/
+db.sqlite3
+
+# ── Node.js ──────────────────────────────────────────────────
+node_modules/
+.next/
+out/
+frontend/.next/
+frontend/node_modules/
+
+# ── Environment ──────────────────────────────────────────────
+.env
+.env.local
+.env.production
+.env.*.local
+
+# ── IDE ──────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Docker ───────────────────────────────────────────────────
+docker-compose.override.yml
+
+# ── Misc ─────────────────────────────────────────────────────
+*.log
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+celerybeat-schedule
+celerybeat.pid

@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-dm-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-charcoal antialiased;
+    font-family: var(--font-dm-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-brand-600 text-white font-medium
+           rounded-lg hover:bg-brand-700 transition-all duration-200 active:scale-[0.98]
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-charcoal text-charcoal
+           font-medium rounded-lg hover:bg-charcoal hover:text-white transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sage-700 font-medium
+           rounded-lg hover:bg-sage-100 transition-colors;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-sage-200 rounded-lg text-charcoal
+           placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-brand-500
+           focus:border-transparent transition-all;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-sage-100 overflow-hidden
+           hover:shadow-md transition-shadow duration-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-semibold text-charcoal;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-sage-600 font-body mt-2;
+  }
+
+  .container-narrow {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #faf7f2; }
+::-webkit-scrollbar-thumb { background: #a1b89f; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #789876; }
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
