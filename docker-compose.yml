@@ -1,0 +1,20 @@
+services:
+
+  backend:
+    build: ./backend
+    container_name: backend-container
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    container_name: frontend-container
+    ports:
+      - "3000:3000"
+
+networks:
+  restaurent-app:
+  driver: bridge
+
+
+
