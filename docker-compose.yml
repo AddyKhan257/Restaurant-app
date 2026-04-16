@@ -5,16 +5,56 @@ services:
     container_name: backend-container
     ports:
       - "8000:8000"
+    networks:
+      - restaurant-nw
+
+    environment:
+      DB_NAME: restaurant
+      DB_USER: admin
+      DB_PASSWORD: khan123
+      DB_HOST: postgres
+      DB_PORT: 5432
+    depends_on:
+      - postgres
+
 
   frontend:
     build: ./frontend
     container_name: frontend-container
     ports:
       - "3000:3000"
+    networks:
+      - restaurant-nw
+
+
+  postgres:
+    image: postgres:15
+    container_name: postgres-container
+    environment:
+      POSTGRES_DB: restaurant
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: khan123
+
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -u admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+
+    ports:
+      - "5432:5432"
+    networks:
+      - restaurant-nw
+    volumes:
+      - restaurant-vol:/var/lib/postgresql/data 
+
 
 networks:
-  restaurent-app:
-  driver: bridge
+  restaurant-nw:
+    driver: bridge
 
 
-
+volumes:
+  restaurant-vol:
