@@ -1,4 +1,4 @@
-# 🍽️ Savoria — Full-Stack Restaurant Application
+# 🍽️ Savoria — Full-Stack Restaurant Applicationr
 
 A production-grade, full-stack restaurant web application built with **Next.js 14**, **Django REST Framework**, **PostgreSQL**, **Celery**, and **Redis**.
 
