@@ -4,7 +4,7 @@ A production-grade, full-stack restaurant web application built with **Next.js 1
 
 ---
 
-## 🏗️ Architecture Overviewp
+## 🏗️ Architecture Overview
 
 ```
 ┌─────────────────────────────────────────────────────┐
